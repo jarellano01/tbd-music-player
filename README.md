@@ -1,5 +1,5 @@
 # TBD - Music Video Player
-The Music Video player is a callaborative video player in which users may add new videos to a queu. The video queu can be managed by the session admin who will be able to reorder, add, or remove videos from the session queu. 
+The Music Video player is a callaborative video player in which users may add new videos to a queu. The video queu can be managed by the session admin who will be able to reorder, add, or remove videos from the session queue. 
 ## Installation
 TODO: Describe the installation process
 ## Usage
