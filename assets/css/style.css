@@ -1,24 +1,41 @@
 body {
 	margin:10px;
-	background-color: #0E0B16;
+	background-color: #192231;
 	font-family: 'Raleway', cursive;
+	font-weight: 200;
 
 }
 
 .panel-default > .panel-heading {
-	background-color: #4717f6;
-	color:#E7DfDD;
-	font-weight: 700;
-	
+	background-color: #494e6b;
+	color:#985e6d;
+	font-weight: 200;
+	border:none;	
+}
+
+.panel-default {
+	border:1px solid #985e6d;
+	font-weight: 200;
 }
 
 .btn-default {
 	
 	background-color: #A239CA;
-	color:#E7DfDD;
+	color:#985e6d;
+	font-weight: 200;
 }
 
 .footer {
 	color:#E7DfDD;
+}
 
+.panel-body {
+	background-color: #192231;
+	color:#985e6d;
+	font-weight: 200;
+	
+}
+
+th {
+	font-weight: 200;
 }
