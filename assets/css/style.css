@@ -39,3 +39,7 @@ body {
 th {
 	font-weight: 200;
 }
+
+.form-control {
+	background-color: red;
+}
