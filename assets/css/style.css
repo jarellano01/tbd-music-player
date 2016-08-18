@@ -20,8 +20,8 @@ body {
 
 .btn-default {
 	
-	background-color: #A239CA;
-	color:#985e6d;
+	background-color: #985e6d;
+	color:#192231;
 	font-weight: 200;
 }
 
@@ -38,4 +38,8 @@ body {
 
 th {
 	font-weight: 200;
+}
+
+.form-control {
+	background-color: red;
 }
