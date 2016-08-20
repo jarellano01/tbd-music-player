@@ -23,14 +23,18 @@ $(function() {
 
         };
 
+    var youtubeList;
+    console.log(youtubeList);
+
    
     $('#searchBtn').on('click', function() {
 
-    	var imageUrl = 'https://placeimg.com/300/150/any';
-
-    	var testArray = ["bro", "yo", "hey"];
-
+    	
     	for (var i = 0; i < testArray.length; i++) {
+    		var imageUrl = 'https://placeimg.com/300/150/any';
+
+    		var testArray = ["bro", "yo", "hey"];
+
     		
 			resultThumb(imageUrl, testArray[i]);
 
