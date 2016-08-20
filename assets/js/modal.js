@@ -16,10 +16,14 @@ $("#submit-song").on('click', function (){
 
 })
 
-function generateModal(title, youtubeID) {
+function generateModal(youTitle, youtubeID) {
   // add hidden youtube shit
   // var title from hidden value. 
   // var youtubeID
+  var youTitle = $("#youTitle").val().trim();
+  var youtubeID =$("#youtubeID").val().trim();
+
+  console.log(youtubeID);
 
 
 
