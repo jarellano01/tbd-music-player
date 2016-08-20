@@ -1,33 +1,36 @@
 $("#trigger-modal").on('click', function() {
-            // trigger modal
-            generateModal("hello", "281101");
+    // trigger modal
+    generateModal("hello", "281101");
 
-            });
+});
 
-$("#submit-song").on('click', function (){
+$("#submit-song").on('click', function() {
 
 
 
-  var song = $(this).id
-            var name = $('#nameinput').val().trim();
-            var dedication = $('#dedicateinput').val().trim();
+    var name = $('#nameinput').val().trim();
+    var dedication = $('#dedicateinput').val().trim();
+    // var title= $("#youTitle").val();
+    var youID= $("#youtubeID").val();
+    addVideoToDatabase(youID, name, dedication);
 
 
 
 })
 
 function generateModal(youTitle, youtubeID) {
-  // add hidden youtube shit
-  // var title from hidden value. 
-  // var youtubeID
-  var youTitle = $("#youTitle").val().trim();
-  var youtubeID =$("#youtubeID").val().trim();
+    // add hidden youtube shit
+    // var title from hidden value. 
+    // var youtubeID
+    $("#youTitle").val("adele");
+    $("#youtubeID").val("858420");
 
-  console.log(youtubeID);
+    console.log(youtubeID);
+    addVideoToDatabase("Fde24313", "Jonathan", "he is awesome");
 
 
 
 
-$("#modal-id").modal()
+    $("#modal-id").modal()
 
 }
