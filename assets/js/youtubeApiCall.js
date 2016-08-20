@@ -18,7 +18,8 @@ $(function() {
     function SetArray(videoArray){
         console.log(videoArray);
     }
-    
-    findYouTube();
+
+    findYouTube("adele");
+
 
 })
