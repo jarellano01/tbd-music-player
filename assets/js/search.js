@@ -18,7 +18,7 @@ $(function() {
     function SetArray(videoArray){
         console.log(videoArray);
     }
-
+    
     findYouTube();
 
 })

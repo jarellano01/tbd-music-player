@@ -12,32 +12,34 @@ $(function() {
 
     //global variables
     var queueArray = [];
+    var qId = 0;
 
-
-
-    function addVideoToDatabase(youtubeId, name, shoutout) {
-        database.ref("queue").push({
-            "youtubeId": youtubeId,
-            "name": name,
-            "shoutout": shoutout,
-        });
-    }
-
-    
-
-    //on value change, update queue array
     database.ref("queue").on("value", function(snapshot) {
         snapshot.forEach(function(childSnapshot) {
             queueArray.push(childSnapshot.val());
         })
+        qId = snapshot.numChildren();
 
         logArray();
     }, function(errorObject) {
         console.log("The read failed: " + errorObject.code);
     });
 
+
+    function addVideoToDatabase(youtubeId, name, shoutout) {
+        database.ref("queue").push({
+        	"queueId" : qId,
+            "youtubeId": youtubeId,
+            "name": name,
+            "shoutout": shoutout,
+        });
+    }
+
+    //on value change, update queue array
+
+
     
-    addVideoToDatabase("Fde24313", "Jonathan", "he is awesome");
+    //addVideoToDatabase("Fde24313", "Jonathan", "he is awesome");
 
     function logArray() {
         console.log(queueArray);
