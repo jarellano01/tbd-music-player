@@ -19,6 +19,6 @@ $(function() {
         console.log(videoArray);
     }
 
-    findYouTube();
+    findYouTube("adele");
 
 })
