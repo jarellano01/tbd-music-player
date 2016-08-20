@@ -1,27 +1,42 @@
-$(function(){
+$(function() {
 
-	var newDiv = $('<div>', {id: 'newResults',})
+		function resultThumb(imageUrl, videoTitle) {
 
-		$('#searchBtn').on('click', function(){
+    			var newDiv = $('<div>', { id: 'newResults', });
 
-       		$('#results').append(newDiv);
+            //$('#results').append(newDiv);
 
-       		console.log(newDiv);
+            	var a = $("<img>");
 
-       	 	var a = $("<img>");
+            	var imageTitle = $('<p>');
 
-       	 	var imageUrl = 'https://placeimg.com/300/150/any';
+            	a.attr('src', imageUrl);
 
-       	 	a.attr('src', imageUrl);
-       	 	a.attr('alt', 'Image') ;
+            	imageTitle.text(videoTitle);
+
+            	$('#newResults').append(a, imageTitle);
+
+            	$('#results').append(newDiv);
+
+            };
+
+   
+    $('#searchBtn').on('click', function() {
+
+    	var imageUrl = 'https://placeimg.com/300/150/any';
+
+    	var testArray = ["bro", "yo", "hey"];
+
+    	for (var i = 0; i < testArray.length; i++) {
+    		
+			resultThumb(imageUrl, testArray[i]);
+
+    	};
+    		
 
 
-       		$('#newResults').append(a);
+        return false;
 
-       		return false;
+    });
 
-
-
-		});
-
-	});
+});
