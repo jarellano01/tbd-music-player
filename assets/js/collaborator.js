@@ -2,23 +2,26 @@ $(function() {
 
 		function resultThumb(imageUrl, videoTitle) {
 
-    			var newDiv = $('<div>', { id: 'newResults', });
+			console.log(videoTitle);
 
-            //$('#results').append(newDiv);
+    		var newDiv = $('<div class="newResults"><img src=' + imageUrl + '><p>' + videoTitle + '</p></div>');
 
-            	var a = $("<img>");
 
-            	var imageTitle = $('<p>');
+            // $('#results').append(newDiv);
 
-            	a.attr('src', imageUrl);
+            	// var someImg = $("<img>");
 
-            	imageTitle.text(videoTitle);
+            	// var imageTitle = $('<p>');
 
-            	$('#newResults').append(a, imageTitle);
+            	// someImg.attr('src', imageUrl);
+
+            	// imageTitle.text(videoTitle);
+
+            	// $('#newResults').append(someImg, imageTitle);
 
             	$('#results').append(newDiv);
 
-            };
+        };
 
    
     $('#searchBtn').on('click', function() {
