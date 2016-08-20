@@ -28,7 +28,6 @@ $(function() {
 
     function addVideoToDatabase(youtubeId, name, shoutout) {
         database.ref("queue").push({
-        	"queueId" : qId,
             "youtubeId": youtubeId,
             "name": name,
             "shoutout": shoutout,
@@ -39,7 +38,7 @@ $(function() {
 
 
     
-    //addVideoToDatabase("Fde24313", "Jonathan", "he is awesome");
+    addVideoToDatabase("Fde24313", "Jonathan", "he is awesome");
 
     function logArray() {
         console.log(queueArray);
