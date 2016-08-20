@@ -10,7 +10,36 @@ $(function() {
 
     var database = firebase.database();
 
-    database.ref("test").push({
-			clickCount: "clickCounter"
-		});
+    //global variables
+    var queueArray = [];
+
+
+
+    function addVideoToDatabase(youtubeId, name, shoutout) {
+        database.ref("queue").push({
+            "youtubeId": youtubeId,
+            "name": name,
+            "shoutout": shoutout,
+        });
+    }
+
+    
+
+    //on value change, update queue array
+    database.ref("queue").on("value", function(snapshot) {
+        snapshot.forEach(function(childSnapshot) {
+            queueArray.push(childSnapshot.val());
+        })
+
+        logArray();
+    }, function(errorObject) {
+        console.log("The read failed: " + errorObject.code);
+    });
+
+    
+    addVideoToDatabase("Fde24313", "Jonathan", "he is awesome");
+
+    function logArray() {
+        console.log(queueArray);
+    }
 })
