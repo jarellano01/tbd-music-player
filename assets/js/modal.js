@@ -1,9 +1,3 @@
-$("#trigger-modal").on('click', function() {
-    // trigger modal
-    generateModal("hello", "281101");
-
-});
-
 $("#submit-song").on('click', function() {
     var name = $('#nameinput').val().trim();
     var dedication = $('#dedicateinput').val().trim();
@@ -15,7 +9,6 @@ $("#submit-song").on('click', function() {
     $('#dedicateinput').val('');
 
 })
-
 
 function generateModal(youTitle, youtubeID) {
     $("#youTitle").val(youTitle);
