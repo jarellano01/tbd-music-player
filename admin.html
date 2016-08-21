@@ -19,7 +19,7 @@
     </div>
     <!-- video display area -->
     <div class="row">
-        <div class="col-sm-9">
+        <div class="col-sm-11">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title"><strong>Admin Queue</strong></h3>
@@ -28,29 +28,19 @@
                     <table class="table table-hover" id='admin-queue'>
                         <thead>
                             <tr>
-                                <th>Song</th>
-                                <th>Artist</th>
-                                <th>Length</th>
+                                <th>Title</th>
                                 <th>Submitted By</th>
                                 <th>Dedication</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="queue">
+                            <tr>
+                                <td>Chino y Nacho - Me Voy Enamorando</td>
+                                <td>Jonathan</td>
+                                <td>Someone</td>
+                            </tr>
                         </tbody>
                     </table>
-                </div>
-            </div>
-        </div>
-        <!-- download this playlist -->
-        <div class="col-sm-3">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Relive this party!</h3>
-                </div>
-                <div class="panel-body" id="party-favor">
-                    <button type="button" class="btn btn-default" aria-label="Left Align">
-                        <span class="glyphicon glyphicon-save" aria-hidden="true"></span> Download your Party Favor!
-                    </button>
                 </div>
             </div>
         </div>
@@ -64,6 +54,8 @@
     <script src="assets/js/jquery-3.1.0.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+    <script src="assets/js/firebase-call.js"></script>
+    <script src="assets/js/admin.js"></script>
 </body>
 
 </html>

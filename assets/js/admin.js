@@ -1,15 +1,24 @@
+$(function() {
+    function generateTable() {
+        jQuery.each(queueArray, function(i, queueItem) {
+            var newRow = $("<tr>");
+            var tdTitle = $("<td>");
+            tdTitle.text(queueItem.name);
+            console.log(queueItem);
 
-  database.ref().on("child_added", function(childSnapshot, prevChildKey) {
-  	console.log(childSnapshot);
+            var tdName = $("<td> ");
+            tdName.text(queueItem.songTitle);
 
-  	 var songName = childSnapshot.val().song;
-     var artistName = childSnapshot.val().artist;
-     var yourName = childSnapshot.val().userName;
-     var dedicationName = childSnapshot.val().dedication;
-     var songLengthSec = childSnapshot.val().songLength;
+            var tdDedication = $("<td>");
+            tdDedication.text(queueItem.shoutout);
 
-     $("#adminQueue > tbody").append("<tr><td>" + songName + "</td><td>" + artistName + "</td><td>" + yourName + "</td><td>" + dedicationName + "</td><td>" + songLengthSec + "</td></tr>");
+            newRow.append(tdTitle).append(tdName).append(tdDedication);
 
-  }
+            $("#queue").append(newRow);
+        });
+    }
+
+    generateTable();
 
 
+})

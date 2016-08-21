@@ -20,7 +20,7 @@
             queueArray.push(childSnapshot.val());
         })
         qId = snapshot.numChildren();
-
+        generateTable();
         logArray();
     }, function(errorObject) {
         console.log("The read failed: " + errorObject.code);
@@ -40,5 +40,25 @@
 
     function logArray() {
         console.log(queueArray);
+    }
+
+    function generateTable() {
+        $("#queue").empty();
+        jQuery.each(queueArray, function(i, queueItem) {
+            var newRow = $("<tr>");
+            var tdTitle = $("<td>");
+            tdTitle.text(queueItem.name);
+            console.log(queueItem);
+
+            var tdName = $("<td> ");
+            tdName.text(queueItem.songTite);
+
+            var tdDedication = $("<td>");
+            tdDedication.text(queueItem.shoutout);
+
+            newRow.append(tdTitle).append(tdName).append(tdDedication);
+
+            $("#queue").append(newRow);
+        });
     }
 
