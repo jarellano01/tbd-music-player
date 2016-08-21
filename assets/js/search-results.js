@@ -18,10 +18,12 @@ $(function() {
         }
 
     }
-    function resultThumb(imageUrl, videoTitle) {
+    function resultThumb(imageUrl, videoTitle, yId) {
         var newDiv = $('<div class="resultThumb col-xs-6"><img class="img-responsive" src=' + imageUrl + '><p>' + videoTitle + '</p></div>');
+        newDiv.attr("data-yId", yId)
         newDiv.click(function(){
             console.log($(this).text())
+            generateModal(videoTitle, $(this).attr("data-yId"));
         })
         $('#results').append(newDiv);
     };
@@ -41,9 +43,10 @@ $(function() {
 
             imageUrl=videoArray[i].snippet.thumbnails.medium.url;
             videoTitle = videoArray[i].snippet.title;
+            yId = videoArray[i].id.videoId;
 
 
-            resultThumb(imageUrl, videoTitle);
+            resultThumb(imageUrl, videoTitle, yId);
         };
     }
 

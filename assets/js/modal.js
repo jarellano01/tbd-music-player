@@ -18,8 +18,8 @@ $("#submit-song").on('click', function() {
 
 
 function generateModal(youTitle, youtubeID) {
-    $("#youTitle").val("adele");
-    $("#youtubeID").val("858420");
+    $("#youTitle").val(youTitle);
+    $("#youtubeID").val(youtubeID);
 
     $("#modal-id").modal()
 }
