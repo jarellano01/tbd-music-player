@@ -20,16 +20,16 @@ $(function() {
     }
     function resultThumb(imageUrl, videoTitle) {
         var newDiv = $('<div class="resultThumb col-xs-6"><img class="img-responsive" src=' + imageUrl + '><p>' + videoTitle + '</p></div>');
-
+        newDiv.click(function(){
+            console.log($(this).text())
+        })
         $('#results').append(newDiv);
     };
 
-
-    findYouTube("adele");
-
     $('#searchBtn').on('click', function() {
-        var videoArray = ["bro", "yo", "hey"];
-        printResults(videoArray);
+        var searchTerm = $("#search").val()
+        if(searchTerm !== "")
+            findYouTube(searchTerm);
 
         return false;
     });
