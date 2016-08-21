@@ -3,7 +3,7 @@ $(function() {
     function findYouTube(searchTerm) {
         var video = searchTerm;
         var videoArray;
-        var queryURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&q=" + video + "&key=AIzaSyCmhc9fABzn9P5tCslboXz2AcF12NH38oM";
+        var queryURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&q=" + video + "&type=video&key=AIzaSyCmhc9fABzn9P5tCslboXz2AcF12NH38oM";
 
         $.ajax({
             url: queryURL,
@@ -19,17 +19,11 @@ $(function() {
 
     }
     function resultThumb(imageUrl, videoTitle) {
-
-        console.log(videoTitle);
-
-        var newDiv = $('<div class="newResults col-xs-6"><img class="img-responsive" src=' + imageUrl + '><p>' + videoTitle + '</p></div>');
+        var newDiv = $('<div class="resultThumb col-xs-6"><img class="img-responsive" src=' + imageUrl + '><p>' + videoTitle + '</p></div>');
 
         $('#results').append(newDiv);
-
     };
 
-    var youtubeList;
-    console.log(youtubeList);
 
     findYouTube("adele");
 

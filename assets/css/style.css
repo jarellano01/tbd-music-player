@@ -5,6 +5,11 @@ body {
 	font-weight: 200;
 
 }
+.resultThumb{
+	height: 170px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
 
 .panel-default > .panel-heading {
 	background-color: #494e6b;
