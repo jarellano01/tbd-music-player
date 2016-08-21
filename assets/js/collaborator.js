@@ -1,49 +1,56 @@
 $(function() {
 
-		function resultThumb(imageUrl, videoTitle) {
+    function findYouTube(searchTerm) {
+        var video = searchTerm;
+        var videoArray;
+        var queryURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&q=" + video + "&key=AIzaSyCmhc9fABzn9P5tCslboXz2AcF12NH38oM";
 
-			console.log(videoTitle);
+        $.ajax({
+            url: queryURL,
+            method: 'GET',
+        }).done(function(response) {
+            SetArray(response.items);
+        });
 
-    		var newDiv = $('<div class="newResults"><img src=' + imageUrl + '><p>' + videoTitle + '</p></div>');
+        function SetArray(videoArray) {
+            console.log(videoArray);
+            printResults(videoArray);
+        }
 
+    }
+    function resultThumb(imageUrl, videoTitle) {
 
-            // $('#results').append(newDiv);
+        console.log(videoTitle);
 
-            	// var someImg = $("<img>");
+        var newDiv = $('<div class="newResults col-xs-6"><img class="img-responsive" src=' + imageUrl + '><p>' + videoTitle + '</p></div>');
 
-            	// var imageTitle = $('<p>');
+        $('#results').append(newDiv);
 
-            	// someImg.attr('src', imageUrl);
-
-            	// imageTitle.text(videoTitle);
-
-            	// $('#newResults').append(someImg, imageTitle);
-
-            	$('#results').append(newDiv);
-
-        };
+    };
 
     var youtubeList;
     console.log(youtubeList);
 
-   
+    findYouTube("adele");
+
     $('#searchBtn').on('click', function() {
-
-    	
-    	for (var i = 0; i < testArray.length; i++) {
-    		var imageUrl = 'https://placeimg.com/300/150/any';
-
-    		var testArray = ["bro", "yo", "hey"];
-
-    		
-			resultThumb(imageUrl, testArray[i]);
-
-    	};
-    		
-
+        var videoArray = ["bro", "yo", "hey"];
+        printResults(videoArray);
 
         return false;
-
     });
+
+    function printResults(videoArray) {
+        $('#results').empty();
+        for (var i = 0; i < 25; i++) {
+            var imageUrl = 'https://placeimg.com/300/150/any';
+
+            imageUrl=videoArray[i].snippet.thumbnails.medium.url;
+            videoTitle = videoArray[i].snippet.title;
+
+
+            resultThumb(imageUrl, videoTitle);
+        };
+    }
 
 });
