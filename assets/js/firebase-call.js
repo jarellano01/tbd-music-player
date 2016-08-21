@@ -1,4 +1,4 @@
-$(function() {
+
     // Initialize Firebase
     var config = {
         apiKey: "AIzaSyCv7xBTitrjB5fjlMOdoMLv1Uyqd9NhZMg",
@@ -15,6 +15,7 @@ $(function() {
     var qId = 0;
 
     database.ref("queue").on("value", function(snapshot) {
+        queueArray = [];
         snapshot.forEach(function(childSnapshot) {
             queueArray.push(childSnapshot.val());
         })
@@ -26,21 +27,18 @@ $(function() {
     });
 
 
-    function addVideoToDatabase(youtubeId, name, shoutout) {
+    function addVideoToDatabase(youtubeId, name, shoutout, songTitle) {
         database.ref("queue").push({
             "youtubeId": youtubeId,
             "name": name,
             "shoutout": shoutout,
+            "songTite": songTitle
         });
     }
 
     //on value change, update queue array
 
-
-    
-    addVideoToDatabase("Fde24313", "Jonathan", "he is awesome");
-
     function logArray() {
         console.log(queueArray);
     }
-})
+
