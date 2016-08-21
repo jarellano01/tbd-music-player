@@ -13,6 +13,7 @@ $("#submit-song").on('click', function() {
 function generateModal(youTitle, youtubeID) {
     $("#youTitle").val(youTitle);
     $("#youtubeID").val(youtubeID);
+    $("#video-title").text(youTitle);
 
     $("#modal-id").modal()
 }

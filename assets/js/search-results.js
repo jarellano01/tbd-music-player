@@ -19,7 +19,7 @@ $(function() {
 
     }
     function resultThumb(imageUrl, videoTitle, yId) {
-        var newDiv = $('<div class="resultThumb col-xs-6"><img class="img-responsive" src=' + imageUrl + '><p>' + videoTitle + '</p></div>');
+        var newDiv = $('<div class="resultThumb col-xs-6 col-sm-4 col-md-3 col-lg-3"><img class="img-responsive" src=' + imageUrl + '><p>' + videoTitle + '</p></div>');
         newDiv.attr("data-yId", yId)
         newDiv.click(function(){
             console.log($(this).text())

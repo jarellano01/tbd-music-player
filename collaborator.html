@@ -16,53 +16,53 @@
     <div class="header">
         <div id="logo"> <img src="assets/images/logo.png"></div>
     </div>
-    <div class="row">
-        <!-- Search  Panel  -->
-        <div class="col-sm-9">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Music</h3>
-                        </div>
-                        <div class="panel-body">
-                            <form role="form">
-                                <div class="form-group">
-                                    <label for="search">Music Search:</label>
-                                    <input type="text" class="form-control" id="search">
-                                </div>
-                                <button type="submit" class="btn btn-default" id="searchBtn">Search</button>
-                                <!-- results -->
-                            </form>
-                        </div>
-                        <div class="panel-body">
-                            <h3 class="panel-title">Results:</h3>
-                        </div>
-                        <div class="panel-body" id="results">
-                            <!-- <div id="imagesizing">
-                                <img src="https://placeimg.com/300/150/any">
-                                <p>Name</p>
-                            </div> -->
+
+
+    <div class="container">
+        <div class="row">
+            <!-- Search  Panel  -->
+            <div class="col-xs-12">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Music</h3>
+                            </div>
+                            <div class="panel-body">
+                                <form role="form">
+                                    <div class="form-group">
+                                        <label for="search">Music Search:</label>
+                                        <input type="text" class="form-control" id="search">
+                                    </div>
+                                    <button type="submit" class="btn btn-default" id="searchBtn">Search</button>
+                                    <!-- results -->
+                                </form>
+                            </div>
+                            <div class="panel-body">
+                                <h3 class="panel-title">Results:</h3>
+                            </div>
+                            <div class="panel-body" id="results">
+                                <!-- results will be displayed here -->
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-
+    </div>
         <div class="modal fade" id="modal-id">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title">Modal title</h4>
+                        <h4 class="modal-title">Submit Your Request</h4>
                     </div>
                     <form role="form">
-                    <div class="modal-body">
-                        
+                        <div class="modal-body">
+                            <p id="video-title"></p>
                             <div id="thumbnail"></div>
                             <div class="form-group">
                                 <label for="search">Your Name:</label>
-                                <input type="text" class="form-control" id="nameinput">
+                                <input type="text" class="form-control" required="required" id="nameinput">
                             </div>
                             <div class="form-group">
                                 <label for="search">Dedicated To:</label>
@@ -74,12 +74,11 @@
                             <div class="form-group">
                                 <input type="hidden" class="form-control" id="youtubeID">
                             </div>
-                        
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary" id="submit-song">Submit Song</button>
-                    </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary" id="submit-song">Submit Song</button>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -91,16 +90,11 @@
         </footer>
         <script src="assets/js/jquery-3.1.0.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>
-
         <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
         <script src="assets/js/firebase-call.js"></script>
-
         <script type="text/javascript" src="assets/js/modal.js"></script>
-
         <script src="assets/js/youtubeApiCall.js"></script>
         <script src="assets/js/search-results.js"></script>
-
-        
 </body>
 
 </html>
