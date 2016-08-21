@@ -1,24 +1,23 @@
-$(function() {
-    function generateTable() {
-        jQuery.each(queueArray, function(i, queueItem) {
-            var newRow = $("<tr>");
-            var tdTitle = $("<td>");
-            tdTitle.text(queueItem.name);
-            console.log(queueItem);
+function getFromDatabase(queueArray){
+	generateTable(queueArray)
+}
 
-            var tdName = $("<td> ");
-            tdName.text(queueItem.songTitle);
+function generateTable(queueArray) {
+    $("#queue").empty();
+    jQuery.each(queueArray, function(i, queueItem) {
+        var newRow = $("<tr>");
+        var tdTitle = $("<td>");
+        tdTitle.text(queueItem.name);
+        console.log(queueItem);
 
-            var tdDedication = $("<td>");
-            tdDedication.text(queueItem.shoutout);
+        var tdName = $("<td> ");
+        tdName.text(queueItem.songTitle);
 
-            newRow.append(tdTitle).append(tdName).append(tdDedication);
+        var tdDedication = $("<td>");
+        tdDedication.text(queueItem.shoutout);
 
-            $("#queue").append(newRow);
-        });
-    }
+        newRow.append(tdTitle).append(tdName).append(tdDedication);
 
-    generateTable();
-
-
-})
+        $("#queue").append(newRow);
+    });
+}

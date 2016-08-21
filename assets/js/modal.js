@@ -10,8 +10,8 @@ $("#submit-song").on('click', function() {
 
     $("#modal-id").modal("toggle");
     return false;
-
 })
+
 
 function generateModal(youTitle, youtubeID) {
     $("#youTitle").val(youTitle);

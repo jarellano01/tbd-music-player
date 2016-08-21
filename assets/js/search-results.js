@@ -1,5 +1,4 @@
 $(function() {
-
     function findYouTube(searchTerm) {
         var video = searchTerm;
         var videoArray;
@@ -49,5 +48,4 @@ $(function() {
             resultThumb(imageUrl, videoTitle, yId);
         };
     }
-
 });
