@@ -49,3 +49,16 @@ th {
 	background-color: #a0a4b5;
 	color:#192231;
 }
+
+@media (max-width: 768px) {
+	.img-responsive{
+		max-height: 56px;
+		max-width: auto;
+		float: left;
+		margin-right: 15px;
+	}
+	.resultThumb{
+		height: 56px;
+		margin-bottom: 15px;
+	}
+}

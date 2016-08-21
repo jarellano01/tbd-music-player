@@ -18,5 +18,5 @@ function generateModal(youTitle, youtubeID) {
     $("#youtubeID").val(youtubeID);
     $("#video-title").text(youTitle);
 
-    $("#modal-id").modal()
+    $("#modal-id").modal();
 }
