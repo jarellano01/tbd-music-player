@@ -8,6 +8,9 @@ $("#submit-song").on('click', function() {
     $('#nameinput').val("");
     $('#dedicateinput').val('');
 
+    $("#modal-id").modal("toggle");
+    return false;
+
 })
 
 function generateModal(youTitle, youtubeID) {
