@@ -9,6 +9,7 @@ $("#submit-song").on('click', function() {
     $('#dedicateinput').val('');
 
     $("#modal-id").modal("toggle");
+
     return false;
 })
 

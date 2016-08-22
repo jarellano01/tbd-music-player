@@ -35,10 +35,9 @@ $(function() {
             queueArray.push(childSnapshot.val());
         })
         qId = snapshot.numChildren();
-        try{
+        try {
             getFromDatabase(queueArray);
-        }
-        catch(error){
+        } catch (error) {
 
         }
 

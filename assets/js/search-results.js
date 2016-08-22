@@ -17,10 +17,11 @@ $(function() {
         }
 
     }
+
     function resultThumb(imageUrl, videoTitle, yId) {
         var newDiv = $('<div class="resultThumb col-xs-12 col-sm-4 col-md-3 col-lg-2"><img class="img-responsive" src=' + imageUrl + '><p>' + videoTitle + '</p></div>');
         newDiv.attr("data-yId", yId)
-        newDiv.click(function(){
+        newDiv.click(function() {
             console.log($(this).text())
             generateModal(videoTitle, $(this).attr("data-yId"));
         })
@@ -29,7 +30,7 @@ $(function() {
 
     $('#searchBtn').on('click', function() {
         var searchTerm = $("#search").val()
-        if(searchTerm !== "")
+        if (searchTerm !== "")
             findYouTube(searchTerm);
 
         return false;
@@ -40,12 +41,14 @@ $(function() {
         for (var i = 0; i < 25; i++) {
             var imageUrl = 'https://placeimg.com/300/150/any';
 
-            imageUrl=videoArray[i].snippet.thumbnails.medium.url;
+            imageUrl = videoArray[i].snippet.thumbnails.medium.url;
             videoTitle = videoArray[i].snippet.title;
             yId = videoArray[i].id.videoId;
 
 
             resultThumb(imageUrl, videoTitle, yId);
+
         };
+      
     }
 });
