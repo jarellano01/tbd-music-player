@@ -10,21 +10,16 @@
     <link rel="stylesheet" href="assets/css/bootstrap.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway:200,500" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
 </head>
 
 <body>
-    
-    <!-- video display area -->
-     <div class="container">
-
+    <div class="container">
         <div class="header">
             <div id="logo"> <img src="assets/images/logo.png"></div>
         </div>
-        
         <div class="row">
-            <div class="col-sm-11">
-                <div class="panel panel-default">
+            <div class="col-sm-10">
+                <div class="panel panel-default" id= "admin-queue">
                     <div class="panel-heading">
                         <h3 class="panel-title"><strong>Admin Queue</strong></h3>
                     </div>
@@ -32,9 +27,9 @@
                         <table class="table table-hover" id='admin-queue'>
                             <thead>
                                 <tr>
-                                    <th><b>Submitted By<b></th>
+                                    <th><b>Added By<b></th>
                                     <th><b>Title<b></th>
-                                    <th>Dedication</th>
+                                    <th><b>Dedication<b></th>
                                 </tr>
                             </thead>
                             <tbody id="queue">
@@ -42,6 +37,24 @@
                             </tbody>
                         </table>
                     </div>
+                </div>
+
+          
+        </div>
+     <div class="col-sm-2" id ="position-buttons">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Re-Order Queue</h3>
+                </div>
+                <div class="panel-body" id="arrange-buttons">
+
+                    <p><button type="button" class="btn btn-default" aria-label="Left Align" id ="delete-song"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+</button></p>
+
+    <p><button type="button" class="btn btn-default" aria-label="Left Align" id ="move-up"><span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
+</button></p>
+    <p> <button type="button" class="btn btn-default" aria-label="Left Align" id ="move-down"><span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+</button></p>
                 </div>
             </div>
         </div>
