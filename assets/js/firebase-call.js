@@ -39,7 +39,7 @@ function addVideoToDatabase(youtubeId, name, dedication, title) {
 
 }
 
-function swap(targetId, prevId) {
+function swap(upId, downId) {
     var adaRankRef = firebase.database().ref('itemsInQueue');
     adaRankRef.transaction(function(currentData) {
         // If users/ada/rank has never been set, currentRank will be `null`.
@@ -48,29 +48,17 @@ function swap(targetId, prevId) {
         } else {
             console.log(Object.keys(currentData).length);
 
-            var prevQueueId = currentData[prevId].queueID;
-            var targetQueueID = currentData[targetId].queueID;
+            var downQueueId = currentData[downId].queueID;
+            var upQueueID = currentData[upId].queueID;
 
-            currentData[targetId].queueID = prevQueueId;
-            currentData[prevId].queueID = targetQueueID;
+            currentData[upId].queueID = downQueueId;
+            currentData[downId].queueID = upQueueID;
 
             return currentData;
         }
     });
 
 }
-
-// $('#searchBtn').on('click', function() {
-//     var targetId = $(this).attr("data-id");
-//     var prevId = $(this).attr("data-before");
-//     swap(targetId, prevId);
-// })
-
-// $('#').on('click', function() {
-//     var targetId = $(this).attr("data-id");
-//     var prevId = $(this).attr("data-after");
-//     swap(targetId, prevId);
-// })
 
 //on value change, update queue array
 

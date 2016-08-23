@@ -11,7 +11,6 @@ function generateTable(queueArray) {
 
         var tdTitle = $("<td>");
         tdTitle.text(queueArray[i].name);
-        console.log(queueArray[i]);
 
         var tdName = $("<td>");
         tdName.text(queueArray[i].title);
@@ -19,10 +18,10 @@ function generateTable(queueArray) {
         newRow.attr("data-id", queueArray[i].itemId);
 
         if(i > 1)
-            newRow.attr("data-before", queueArray[i-1].itemId);
+            newRow.attr("data-prev", queueArray[i-1].itemId);
 
         if(i<queueArray.length-1)
-            newRow.attr("data-after", queueArray[i+1].itemId);
+            newRow.attr("data-next", queueArray[i+1].itemId);
 
         var tdDedication = $("<td>");
         tdDedication.text(queueArray[i].dedication);
@@ -47,6 +46,21 @@ function generateTable(queueArray) {
 
     $("#delete-song").click(function() {
         console.log($(".active"))
+    })
+
+    $("#move-up").click(function(){
+        var upId = $(".active").attr("data-id");
+        var downId = $(".active").attr("data-prev");
+        if(downId !== undefined && upId !== undefined)
+            swap(upId, downId);
+    })
+
+    $("#move-down").click(function(){
+        var downId = $(".active").attr("data-id");
+        var upId = $(".active").attr("data-next");
+
+        if(downId !== undefined && upId !== undefined)
+            swap(upId, downId);
     })
 
 
