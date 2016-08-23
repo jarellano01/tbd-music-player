@@ -31,7 +31,7 @@ var qId = 0;
           } else {
               var numObjects = Object.keys(currentData).length;
               console.log(Object.keys(currentData).length);
-              currentData[numObjects] = {"queueID" : numObjects, "name" : name, "title": title, "id" : youtubeId, "dedication" : dedication};
+              currentData[numObjects] = {"itemId": numObjects,"queueID" : numObjects, "name" : name, "title": title, "id" : youtubeId, "dedication" : dedication};
               currentData.numItems = numObjects;
               return currentData;
           }
