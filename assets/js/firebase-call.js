@@ -13,14 +13,6 @@ var database = firebase.database();
 var queueArray = [];
 var qId = 0;
 
-// function addVideoToDatabase(youtubeId, name, shoutout, songTitle) {
-//     database.ref("queue").push({
-//         "youtubeId": youtubeId,
-//         "name": name,
-//         "shoutout": shoutout,
-//         "songTitle": songTitle
-//     });
-// }
 
 function addVideoToDatabase(youtubeId, name, dedication, title) {
     var adaRankRef = firebase.database().ref('itemsInQueue');
@@ -84,5 +76,4 @@ $(function() {
         console.log("The read failed: " + errorObject.code);
     });
 
-    // addVideoToDatabase("asdfas", "Jonathan", "awesomeness", "Adele's Song");
 })
