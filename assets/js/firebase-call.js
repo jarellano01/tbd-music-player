@@ -13,14 +13,32 @@ var database = firebase.database();
 var queueArray = [];
 var qId = 0;
 
-function addVideoToDatabase(youtubeId, name, shoutout, songTitle) {
-    database.ref("queue").push({
-        "youtubeId": youtubeId,
-        "name": name,
-        "shoutout": shoutout,
-        "songTitle": songTitle
-    });
-}
+// function addVideoToDatabase(youtubeId, name, shoutout, songTitle) {
+//     database.ref("queue").push({
+//         "youtubeId": youtubeId,
+//         "name": name,
+//         "shoutout": shoutout,
+//         "songTitle": songTitle
+//     });
+// }
+
+  function addVideoToDatabase(youtubeId, name, dedication, title) {
+      var adaRankRef = firebase.database().ref('itemsInQueue');
+      adaRankRef.transaction(function(currentData) {
+          // If users/ada/rank has never been set, currentRank will be `null`.
+          if (currentData === null) {
+              return currentData;
+          } else {
+              var numObjects = Object.keys(currentData).length;
+              console.log(Object.keys(currentData).length);
+              currentData[numObjects] = {"queueID" : numObjects, "name" : name, "title": title, "id" : youtubeId, "dedication" : dedication};
+              currentData.noItems = numObjects;
+              return currentData;
+          }
+      });
+  }
+
+
 //on value change, update queue array
 
 function logArray() {
@@ -29,7 +47,7 @@ function logArray() {
 
 $(function() {
 
-    database.ref("queue").on("value", function(snapshot) {
+    database.ref("itemsInQueue").orderByChild("queueID").on("value", function(snapshot) {
         queueArray = [];
         snapshot.forEach(function(childSnapshot) {
             queueArray.push(childSnapshot.val());
@@ -45,4 +63,6 @@ $(function() {
     }, function(errorObject) {
         console.log("The read failed: " + errorObject.code);
     });
+
+    // addVideoToDatabase("asdfas", "Jonathan", "awesomeness", "Adele's Song");
 })

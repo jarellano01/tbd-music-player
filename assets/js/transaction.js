@@ -8,21 +8,7 @@
   firebase.initializeApp(config);
 
   // var database = firebase.database();
-  function addRecord() {
-      var adaRankRef = firebase.database().ref('itemsInQueue');
-      adaRankRef.transaction(function(currentData) {
-          // If users/ada/rank has never been set, currentRank will be `null`.
-          if (currentData === null) {
-              return currentData;
-          } else {
-              var numObjects = Object.keys(currentData).length;
-              console.log(Object.keys(currentData).length);
-              currentData[numObjects] = {queueID:numObjects, Name: "Jonathan", id: "1242332", dedication: "shoutout"};
-              currentData.noItems = numObjects;
-              return currentData;
-          }
-      });
-  }
+
 
   addRecord();
   addRecord();
