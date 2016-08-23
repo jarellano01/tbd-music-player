@@ -30,7 +30,6 @@ function addVideoToDatabase(youtubeId, name, dedication, title) {
             return currentData;
         } else {
             var numObjects = Object.keys(currentData).length;
-            console.log(Object.keys(currentData).length);
             currentData[numObjects] = { "itemId": numObjects, "queueID": numObjects, "name": name, "title": title, "id": youtubeId, "dedication": dedication };
             currentData.numItems = numObjects;
             return currentData;
