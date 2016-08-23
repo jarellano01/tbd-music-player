@@ -13,19 +13,10 @@ function generateTable(queueArray) {
         tdTitle.text(queueItem.name);
         console.log(queueItem);
 
-        // var findItem = $(this).queueItem.itemId
-        // console.log(findItem);
-        // findItem.attr('data', queueItem.itemId)
-      
-
-// <<<<<<< HEAD
-        var tdName = $("<td>");
-        tdName.text(queueItem.songTitle);
-// =======
         var tdName = $("<td> ");
         tdName.text(queueItem.title);
-// >>>>>>> 6f4146de28bada635cd4d6e7c82a22d10a703b21
 
+        newRow.attr("data-id", queueItem.itemId);
         var tdDedication = $("<td>");
         tdDedication.text(queueItem.dedication);
 
