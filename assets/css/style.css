@@ -53,7 +53,7 @@ th {
 #position-buttons {
 	text-align: center;
 }
-.videoplayer {
+#videoplayer {
 	position:relative;
 	padding-bottom:56.25%;
 	padding-top:30px;
@@ -61,7 +61,7 @@ th {
 	overflow:hidden;
 }
 
-.videoplayer iframe, .videoplayer object, .videoplayer embed {
+#videoplayer iframe, .videoplayer object, .videoplayer embed {
 	position:absolute;
 	top:0;
 	left:0;
