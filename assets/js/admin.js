@@ -4,27 +4,28 @@ function getFromDatabase(queueArray) {
 
 function generateTable(queueArray) {
     $("#queue").empty();
-    jQuery.each(queueArray, function(i, queueItem) {
+    for(i=1; i<queueArray.length; i++) {
         var newRow = $("<tr>");
         newRow.attr('class', 'selector')
 
 
         var tdTitle = $("<td>");
-        tdTitle.text(queueItem.name);
-        console.log(queueItem);
+        tdTitle.text(queueArray[i].name);
+        console.log(queueArray[i]);
 
-        var tdName = $("<td> ");
-        tdName.text(queueItem.title);
+        var tdName = $("<td>");
+        tdName.text(queueArray[i].title);
 
         newRow.attr("data-id", queueArray[i].itemId);
 
-        if(i !==0)
+        if(i > 1)
             newRow.attr("data-before", queueArray[i-1].itemId);
 
-        newRow.attr("data-after", queueArray[i+1].itemId);
+        if(i<queueArray.length-1)
+            newRow.attr("data-after", queueArray[i+1].itemId);
 
         var tdDedication = $("<td>");
-        tdDedication.text(queueItem.dedication);
+        tdDedication.text(queueArray[i].dedication);
 
         newRow.append(tdTitle).append(tdName).append(tdDedication);
      
@@ -33,16 +34,10 @@ function generateTable(queueArray) {
         // test the ability to grab item from queue list. check console.log
 
         $(".selector").on('click', function() {
-
-            var testing = $(this).queueItem
-            console.log(testing);
             selectRow(this);
-
-
         });
 
-
-    });
+    };
 
     function selectRow(selectedRow) {
 

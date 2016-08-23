@@ -39,7 +39,7 @@ function addVideoToDatabase(youtubeId, name, dedication, title) {
 
 }
 
-function swap (targetId, prevId) {
+function swap(targetId, prevId) {
     var adaRankRef = firebase.database().ref('itemsInQueue');
     adaRankRef.transaction(function(currentData) {
         // If users/ada/rank has never been set, currentRank will be `null`.
@@ -60,17 +60,17 @@ function swap (targetId, prevId) {
 
 }
 
-$('#searchBtn').on('click', function() {
-    var targetId = $(this).attr("data-id");
-    var prevId = $(this).attr("data-before");
-    swap(targetId, prevId);
-})
+// $('#searchBtn').on('click', function() {
+//     var targetId = $(this).attr("data-id");
+//     var prevId = $(this).attr("data-before");
+//     swap(targetId, prevId);
+// })
 
-$('#').on('click', function() {
-    var targetId = $(this).attr("data-id");
-    var prevId = $(this).attr("data-after");
-    swap(targetId, prevId);
-})
+// $('#').on('click', function() {
+//     var targetId = $(this).attr("data-id");
+//     var prevId = $(this).attr("data-after");
+//     swap(targetId, prevId);
+// })
 
 //on value change, update queue array
 
@@ -89,7 +89,7 @@ $(function() {
         try {
             getFromDatabase(queueArray);
         } catch (error) {
-
+            console.log(error);
         }
 
         logArray();

@@ -50,7 +50,7 @@ th {
 	color:#192231;
 }
 
-#admin-queue {
+.admin-queue {
 	overflow-y:scroll;
 	height:400px;
 }
