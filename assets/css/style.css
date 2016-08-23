@@ -50,6 +50,11 @@ th {
 	color:#192231;
 }
 
+#position-buttons {
+	text-align: center;
+}
+
+
 @media (max-width: 768px) {
 	.img-responsive{
 		max-height: 56px;
