@@ -1,6 +1,7 @@
         // 2. This code loads the IFrame Player API code asynchronously. //R.L still working on populating queue
         var tag = document.createElement('script');
 
+        //ADDED A COUNTER TO GRAB NEXT VIDEO FROM ARRAY
         var queueCounter = 1;
 
         tag.src = "https://www.youtube.com/iframe_api";
@@ -45,6 +46,7 @@
             if (event.data == YT.PlayerState.ENDED) { //|| event.data == -1 && !isFirstVideo
                 //TODO LOOK UP THE NEXT VIDEO FROM THE ARRAY AND USE THE VIDEOID TO PASS IN TO THE QUEUE VIDEO BY ID CALL THAT WE HAVE IN THE NEXT LINE.
                 videoId = queueArray[queueCounter].id;
+                //UPDATE THE COUNTER ONCE FIRST SECONDS VIDEO IS DONE.
                 queueCounter++;
                 console.log(queueArray[queueCounter].id);
                 player.cueVideoById(videoId, 0, "large");
