@@ -32,7 +32,7 @@ var qId = 0;
               var numObjects = Object.keys(currentData).length;
               console.log(Object.keys(currentData).length);
               currentData[numObjects] = {"queueID" : numObjects, "name" : name, "title": title, "id" : youtubeId, "dedication" : dedication};
-              currentData.noItems = numObjects;
+              currentData.numItems = numObjects;
               return currentData;
           }
       });

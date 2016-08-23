@@ -11,10 +11,10 @@ function generateTable(queueArray) {
         console.log(queueItem);
 
         var tdName = $("<td> ");
-        tdName.text(queueItem.songTitle);
+        tdName.text(queueItem.title);
 
         var tdDedication = $("<td>");
-        tdDedication.text(queueItem.shoutout);
+        tdDedication.text(queueItem.dedication);
 
         newRow.append(tdTitle).append(tdName).append(tdDedication);
 
