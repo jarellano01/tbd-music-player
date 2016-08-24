@@ -22,21 +22,21 @@ var qId = 0;
 //     });
 // }
 
-  function addVideoToDatabase(youtubeId, name, dedication, title) {
-      var adaRankRef = firebase.database().ref('itemsInQueue');
-      adaRankRef.transaction(function(currentData) {
-          // If users/ada/rank has never been set, currentRank will be `null`.
-          if (currentData === null) {
-              return currentData;
-          } else {
-              var numObjects = Object.keys(currentData).length;
-              console.log(Object.keys(currentData).length);
-              currentData[numObjects] = {"itemId": numObjects,"queueID" : numObjects, "name" : name, "title": title, "id" : youtubeId, "dedication" : dedication};
-              currentData.numItems = numObjects;
-              return currentData;
-          }
-      });
-  }
+function addVideoToDatabase(youtubeId, name, dedication, title) {
+    var adaRankRef = firebase.database().ref('itemsInQueue');
+    adaRankRef.transaction(function(currentData) {
+        // If users/ada/rank has never been set, currentRank will be `null`.
+        if (currentData === null) {
+            return currentData;
+        } else {
+            var numObjects = Object.keys(currentData).length;
+            console.log(Object.keys(currentData).length);
+            currentData[numObjects] = { "itemId": numObjects, "queueID": numObjects, "name": name, "title": title, "id": youtubeId, "dedication": dedication };
+            currentData.numItems = numObjects;
+            return currentData;
+        }
+    });
+}
 
 
 //on value change, update queue array
@@ -54,12 +54,15 @@ $(function() {
         })
         qId = snapshot.numChildren();
         try {
-            getFromDatabase(queueArray);
-        } catch (error) {
+            getFromDatabase(queueArray); //I PROBABLY DONT NEED THIS TOOK IT OUT. ??????R.L
+          
 
+        } catch (error) {
+            console.log(error);
         }
 
         logArray();
+        startIframeAfterFb();   //ADDED THIS SO THE API FOR YOUTUBE IFRAME LOADS AFTER FIRE BASE DATA IS LOADED. R.L
     }, function(errorObject) {
         console.log("The read failed: " + errorObject.code);
     });

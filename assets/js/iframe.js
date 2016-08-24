@@ -1,22 +1,28 @@
-        // 2. This code loads the IFrame Player API code asynchronously. //R.L still working on populating queue
-        var tag = document.createElement('script');
-
+        
         //ADDED A COUNTER TO GRAB NEXT VIDEO FROM ARRAY
-        var queueCounter = 1;
+        var queueCounter = 2;
 
-        tag.src = "https://www.youtube.com/iframe_api";
-        var firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+        function startIframeAfterFb() {
+            // 2. THIS CODE LOADS THE IFRAME PLAYER API CODE ASYNCHRNOUSLY.
+            var tag = document.createElement('script');
 
-        // 3. This function creates an <iframe> (and YouTube player)
-        //    after the API code downloads.
+            
+
+            tag.src = "https://www.youtube.com/iframe_api";
+            var firstScriptTag = document.getElementsByTagName('script')[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+        }
+
+        // 3. THIS FUNCTION CREATES AN <iframe> (AND YOUTUBE PLAYER)
+        //AFTER THE API CODE DOWNLOADS.
         var player;
 
         function onYouTubeIframeAPIReady() {
             player = new YT.Player('player', {
                 height: '500',
                 width: '890',
-                videoId: "ij_0p_6qTss",
+                //videoId: "ij_0p_6qTss",
+                videoId: queueArray[1].id,
                 events: {
                     'onReady': onPlayerReady,
                     'onStateChange': onPlayerStateChange
@@ -24,14 +30,16 @@
             });
         }
 
-        // 4. The API will call this function when the video player is ready.
+        // 4. THE API WILL CALL THIS FUNCTION WHEN THE VIDEO PLAYER IS READY.
+
         function onPlayerReady(event) {
             event.target.playVideo();
+
         }
 
-        // 5. The API calls this function when the player's state changes.
-        //    The function indicates that when playing a video (state=1),
-        //    the player should play for six seconds and then stop.
+        // 5. THE API CALLS THIS FUNCTION WHEN THE PLAYER'S STATE CHANGES.
+        //  THE FUCNTION INDICATES THAT WHEN PLAYING A VIDEO (STATE=1),
+        //  THE PLAYER SHOULD PLAY FOR SIX SECONDS AND THEN STOP.
         var done = false;
         var isFirstVideo = true;
 
@@ -39,9 +47,9 @@
             if (event.data == YT.PlayerState.PLAYING && !done) {
                 // setTimeout(stopVideo, 0);
                 done = true;
-            if (isFirstVideo == true) {
-                isFirstVideo = false;
-            }
+                if (isFirstVideo == true) {
+                    isFirstVideo = false;
+                }
             }
             if (event.data == YT.PlayerState.ENDED) { //|| event.data == -1 && !isFirstVideo
                 //TODO LOOK UP THE NEXT VIDEO FROM THE ARRAY AND USE THE VIDEOID TO PASS IN TO THE QUEUE VIDEO BY ID CALL THAT WE HAVE IN THE NEXT LINE.

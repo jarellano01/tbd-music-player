@@ -1,5 +1,5 @@
 function getFromDatabase(queueArray) {
-    generateTable(queueArray)
+    generateTable(queueArray);
 }
 
 function generateTable(queueArray) {
@@ -18,16 +18,18 @@ function generateTable(queueArray) {
 
         newRow.attr("data-id", queueArray[i].itemId);
 
-        if(i !==0)
-            newRow.attr("data-before", queueArray[i-1].itemId);
+        if (i !== 0)
 
-        newRow.attr("data-after", queueArray[i+1].itemId);
+        newRow.attr("data-before", queueArray[i].itemId);
+
+        newRow.attr("data-after", queueArray[i].itemId);
 
         var tdDedication = $("<td>");
+
         tdDedication.text(queueItem.dedication);
 
         newRow.append(tdTitle).append(tdName).append(tdDedication);
-     
+
 
         $("#queue").append(newRow);
         // test the ability to grab item from queue list. check console.log
