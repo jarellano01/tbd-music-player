@@ -2,7 +2,7 @@
         //ADDED A COUNTER TO GRAB NEXT VIDEO FROM ARRAY
         var queueCounter = 2;
 
-        function startIframeAfterFb() {
+        function getFromDatabase() {
             // 2. THIS CODE LOADS THE IFRAME PLAYER API CODE ASYNCHRNOUSLY.
             var tag = document.createElement('script');
 
