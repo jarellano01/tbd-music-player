@@ -15,14 +15,14 @@ var qId = 0;
 
 
 function addVideoToDatabase(youtubeId, name, dedication, title) {
-    var adaRankRef = firebase.database().ref('itemsInQueue');
-    adaRankRef.transaction(function(currentData) {
+    var queue = firebase.database().ref('itemsInQueue');
+    queue.transaction(function(currentData) {
         // If users/ada/rank has never been set, currentRank will be `null`.
         if (currentData === null) {
             return currentData;
         } else {
             var numObjects = Object.keys(currentData).length;
-            currentData[numObjects] = { "itemId": numObjects, "queueID": numObjects, "name": name, "title": title, "id": youtubeId, "dedication": dedication };
+            currentData[numObjects] = { "itemId": numObjects, "queueID": numObjects, "name": name, "title": title, "id": youtubeId, "dedication": dedication, played: false};
             currentData.numItems = numObjects;
             return currentData;
         }
@@ -30,14 +30,26 @@ function addVideoToDatabase(youtubeId, name, dedication, title) {
 
 }
 
-function swap(upId, downId) {
-    var adaRankRef = firebase.database().ref('itemsInQueue');
-    adaRankRef.transaction(function(currentData) {
+function videoPlayed(itemId) {
+    var queue = firebase.database().ref('itemsInQueue');
+    queue.transaction(function(currentData) {
         // If users/ada/rank has never been set, currentRank will be `null`.
         if (currentData === null) {
             return currentData;
         } else {
-            console.log(Object.keys(currentData).length);
+            currentData[itemId].played = true;
+            return currentData;
+        }
+    });
+}
+
+function swap(upId, downId) {
+    var queue = firebase.database().ref('itemsInQueue');
+    queue.transaction(function(currentData) {
+        // If users/ada/rank has never been set, currentRank will be `null`.
+        if (currentData === null) {
+            return currentData;
+        } else {
 
             var downQueueId = currentData[downId].queueID;
             var upQueueID = currentData[upId].queueID;
@@ -62,7 +74,9 @@ $(function() {
     database.ref("itemsInQueue").orderByChild("queueID").on("value", function(snapshot) {
         queueArray = [];
         snapshot.forEach(function(childSnapshot) {
-            queueArray.push(childSnapshot.val());
+
+            if(!childSnapshot.val().played)
+                queueArray.push(childSnapshot.val());
         })
         qId = snapshot.numChildren();
         try {

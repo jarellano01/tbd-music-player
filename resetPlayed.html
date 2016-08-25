@@ -28,13 +28,27 @@
 	};
 	firebase.initializeApp(config);
 
-	var database = firebase.database();
+	var queue = firebase.database().ref('itemsInQueue');
+    queue.transaction(function(currentData) {
+        // If users/ada/rank has never been set, currentRank will be `null`.
+        if (currentData === null) {
+            return currentData;
+        } else {
+        	console.log(currentData);
 
-	database.ref("itemsInQueue").set({
-	    numItems: 0
-	}).then(function(){
-		window.location = "collaborator.html";
-	});
+        	var numObjects = Object.keys(currentData).length;
+        	console.log(numObjects);
+        	for(i = 1; i < numObjects; i++)
+            {
+            	console.log(currentData[i]);
+            	currentData[i].played = false;
+            }
+            return currentData;
+        }
+    },
+    function(){
+    	window.location = "index.html";
+    });
 
 
 	

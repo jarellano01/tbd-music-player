@@ -26,7 +26,6 @@ function generateTable(queueArray) {
         var tdDedication = $("<td>");
         tdDedication.text(queueArray[i].dedication);
 
-
         newRow.append(tdTitle).append(tdName).append(tdDedication);
 
 
@@ -46,7 +45,8 @@ function generateTable(queueArray) {
     }
 
     $("#delete-song").click(function() {
-        console.log($(".active"))
+        var itemId = $(".active").attr("data-id");
+        videoPlayed(itemId);
     })
 
     $("#move-up").click(function(){
