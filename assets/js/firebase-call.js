@@ -22,7 +22,7 @@ function addVideoToDatabase(youtubeId, name, dedication, title) {
             return currentData;
         } else {
             var numObjects = Object.keys(currentData).length;
-            currentData[numObjects] = { "itemId": numObjects, "queueID": numObjects, "name": name, "title": title, "id": youtubeId, "dedication": dedication, played: false};
+            currentData[numObjects] = { "itemId": numObjects, "queueID": numObjects, "name": name, "title": title, "id": youtubeId, "dedication": dedication, played: false };
             currentData.numItems = numObjects;
             return currentData;
         }
@@ -63,36 +63,89 @@ function swap(upId, downId) {
 
 }
 
-function resetQueued(){
+function resetQueued() {
     database.ref("itemsInQueue").set({
         numItems: 0
-    }).then(function(){
+    }).then(function() {
         window.location = "collaborator.html";
     });
 }
 
-function resetPlayed(){
-        var queue = firebase.database().ref('itemsInQueue');
+function resetPlayed() {
+    var queue = firebase.database().ref('itemsInQueue');
     queue.transaction(function(currentData) {
-        // If users/ada/rank has never been set, currentRank will be `null`.
-        if (currentData === null) {
-            return currentData;
-        } else {
-            console.log(currentData);
+            // If users/ada/rank has never been set, currentRank will be `null`.
+            if (currentData === null) {
+                return currentData;
+            } else {
+                console.log(currentData);
 
-            var numObjects = Object.keys(currentData).length;
-            console.log(numObjects);
-            for(i = 1; i < numObjects; i++)
-            {
-                console.log(currentData[i]);
-                currentData[i].played = false;
+                var numObjects = Object.keys(currentData).length;
+                console.log(numObjects);
+                for (i = 1; i < numObjects; i++) {
+                    console.log(currentData[i]);
+                    currentData[i].played = false;
+                }
+                return currentData;
             }
-            return currentData;
-        }
-    },
-    function(){
-        window.location = "index.html";
-    });
+        },
+        function() {
+            window.location = "index.html";
+        });
+}
+
+function finale() {
+    var queue = firebase.database().ref('itemsInQueue');
+    queue.transaction(function(currentData) {
+            // If users/ada/rank has never been set, currentRank will be `null`.
+            if (currentData === null) {
+                return currentData;
+            } else {
+                currentData = {
+                    "1": {
+                        "dedication": "You guys have been an awesome team to work with. Keep up all the good work.",
+                        "id": "BOWSCwLJfzE",
+                        "itemId": 1,
+                        "name": "TBD",
+                        "played": false,
+                        "queueID": 1,
+                        "title": "TBD: Totally BadAss Dudes/ette"
+                    },
+                    "numItems" : 3
+                }
+                return currentData;
+            }
+        },
+        function() {
+            window.location = "index.html";
+        });
+}
+
+function entrance() {
+    var queue = firebase.database().ref('itemsInQueue');
+    queue.transaction(function(currentData) {
+            // If users/ada/rank has never been set, currentRank will be `null`.
+            if (currentData === null) {
+                return currentData;
+            } else {
+                currentData = {
+                    "1": {
+                        "dedication": "You guys have been an awesome team to work with. Keep up all the good work.",
+                        "id": "BOWSCwLJfzE",
+                        "itemId": 1,
+                        "name": "TBD",
+                        "played": false,
+                        "queueID": 1,
+                        "title": "TBD: Totally BadAss Dudes/ette"
+                    },
+                    "numItems" : 3
+                }
+                return currentData;
+            }
+        },
+        function() {
+            window.location = "index.html";
+        });
 }
 
 //on value change, update queue array
@@ -101,13 +154,14 @@ function logArray() {
     console.log(queueArray);
 }
 
+
 $(function() {
 
     database.ref("itemsInQueue").orderByChild("queueID").on("value", function(snapshot) {
         queueArray = [];
         snapshot.forEach(function(childSnapshot) {
 
-            if(!childSnapshot.val().played)
+            if (!childSnapshot.val().played)
                 queueArray.push(childSnapshot.val());
         })
         qId = snapshot.numChildren();
