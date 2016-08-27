@@ -109,11 +109,37 @@
                             <h2> The Details</h2>
                             <p>PartySRC is your solution for the perfect party soundtrack. Give all of your guests access to the collaborator screen, where they can search YouTube Videos and add them to the group playlist. The playlist will play all night long, giving you an unforgettable evening of personally curated songs. </p>
                             <h2>Who is PartySRC for?</h2>
-                            <p>PartySRC is for any reluctant (or lazy!) party host who wants some help from his/her friends making a non-stop, off-the-chain playlist for a memorable night.  </p>
+                            <p>PartySRC is for any reluctant (or lazy!) party host who wants some help from his/her friends making a non-stop, off-the-chain playlist for a memorable night. </p>
                         </div>
                         <div class="col-sm-6">
                             <h2>Our Motivation</h2>
                             <p>Everyone enjoys playing music whenever they are engaged in some sort of collaborative activity. Whether it’s at a social gathering or just doing in-class work at a coding bootcamp everyone enjoys listening to music. We created PartySRC to allow a group of friends to curate an ideal playlist fit for any activity.</p>
+                        </div>
+                        
+                        <div class="col-sm-6">
+                            <h2>Technologies Used</h2>
+                            <ul>
+                                <li>Firebase - Queue Management</li>
+                                <li>Youtube API - Music Source</li>
+                                <li>iFrame API - Video Player Control</li>
+                                <li>Bootstrap - Front End Interface</li>
+                            </ul>
+                            
+                        </div>
+                        <div class="col-sm-12">
+                            <h2>Challenges</h2>
+                            <h4>Firebase - Queue</h4>
+                            <p>Issues arrose when dealing with how to handle multiple pushes to the database. How could we keep the integrity of the queue order if multiple people submitted at the same time</p>
+                            <p>Solution: We used transaction for everything and created our own autonumbering script to handle this issue. At no point do we use set or push, because the app required knowing the current amount of items in the system in order to add the new number. Transactions place everyone in a push queue which allows the app to pull the correct number of items in the database at the moment that the transaction is processed.</p>
+                            <h4>Youtube API</h4>
+                            <p>Youtube API gave a few different options for pulling information. The first option took us days to figure out and get a useable output.</p>
+                            <p>Solution: We found that there was another simpler option. Lessons Learned: Skim through the whole API before trying the first option</p>
+                            <h4>Git Collaboration</h4>
+                            <p>As Git Noobs we ran into small issues with collaborating and merging changes.</p>
+                            <p>Solution: We decided to take the project appart into separate entities. Every function was created separately and each team member would supply requirements for their functions to work properly. This way we could all work separately and efficiently.</p>
+                            
+                        </div>
+                        <div class="col-sm-6">
                             <h2>The Future</h2>
                             <p>
                                 <ul>
@@ -125,25 +151,6 @@
                                     <li>Time limit for songs</li>
                                 </ul>
                             </p>
-                        </div>
-                        <div class="col-sm-6">
-                            <p>BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH </p>
-                            <p>BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH </p>
-                        </div>
-                        <div class="col-sm-6">
-                            <h2>Technologies Used</h2>
-                            <ul>
-                              <li>Firebase - Queue Management</li>
-                              <li>Youtube API - Music Source</li>
-                              <li>iFrame API - Video Player Control</li>
-                              <li>Bootstrap - Front End Interface</li>
-                            </ul>
-                            
-                            <h2>Challenges</h2>
-                            <h4>Firebase - Queue</h4>
-                            <p>Issues arrose when dealing with how to handle multiple pushes to the database. How could we keep the integrity of the queue order if multiple people submitted at the same time</p>
-                            <p>Solution: We used transaction for everything and created our own autonumbering script to handle this issue. At no point do we use set or push, because the app required knowing the current amount of items in the system in order to add the new number. Transactions place everyone in a push queue which allows the app to pull the correct number of items in the database at the moment that the transaction is processed.</p>
-
                         </div>
                     </div>
                 </div>
