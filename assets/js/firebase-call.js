@@ -143,7 +143,7 @@ function entrance() {
                         "id": "6xlsR1c8yh4",
                         "itemId": 2,
                         "name": "RORO",
-                        "played": true,
+                        "played": false,
                         "queueID": 2,
                         "title": "Zion - Zun Da Da"
                     },
@@ -152,7 +152,7 @@ function entrance() {
                         "id": "mmu93BAmA9I",
                         "itemId": 3,
                         "name": "THE CLASS",
-                        "played": true,
+                        "played": false,
                         "queueID": 3,
                         "title": "EXTREMELY Funny Arabian Kid Dance!"
                     },
