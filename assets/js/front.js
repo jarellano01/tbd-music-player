@@ -74,6 +74,12 @@ function utils() {
         e.preventDefault();
         window.open($(this).attr("href"));
     });
+
+    $('.internal').on('click', function (e) {
+
+        e.preventDefault();
+        window.location = ($(this).attr("href"));
+    });
     /* animated scrolling */
 
     $('.scroll-to, #navigation a').click(function (event) {

@@ -111,7 +111,7 @@ function finale() {
                         "queueID": 1,
                         "title": "TBD: Totally BadAss Dudes/ette"
                     },
-                    "numItems" : 3
+                    "numItems": 3
                 }
                 return currentData;
             }
@@ -130,15 +130,52 @@ function entrance() {
             } else {
                 currentData = {
                     "1": {
-                        "dedication": "You guys have been an awesome team to work with. Keep up all the good work.",
-                        "id": "BOWSCwLJfzE",
+                        "dedication": "UCLA CODING BOOTCAMP CLASS",
+                        "id": "jQYVoHZRYI0",
                         "itemId": 1,
-                        "name": "TBD",
+                        "name": "MR ROGERS",
                         "played": false,
                         "queueID": 1,
-                        "title": "TBD: Totally BadAss Dudes/ette"
+                        "title": "Amazing Babies Dancing - Very Funny"
                     },
-                    "numItems" : 3
+                    "2": {
+                        "dedication": "THE MOON",
+                        "id": "6xlsR1c8yh4",
+                        "itemId": 2,
+                        "name": "RORO",
+                        "played": true,
+                        "queueID": 2,
+                        "title": "Zion - Zun Da Da"
+                    },
+                    "3": {
+                        "dedication": "EVERYONE",
+                        "id": "mmu93BAmA9I",
+                        "itemId": 3,
+                        "name": "THE CLASS",
+                        "played": true,
+                        "queueID": 3,
+                        "title": "EXTREMELY Funny Arabian Kid Dance!"
+                    },
+                    "4": {
+                        "dedication": "ME AS A BABY",
+                        "id": "Lqzg0mU9wLc",
+                        "itemId": 4,
+                        "name": "OMAR PATEL",
+                        "played": false,
+                        "queueID": 4,
+                        "title": "Funny pakistani kid dancing"
+                    },
+                    "5": {
+                        "dedication": "YEE HAW CLASS",
+                        "id": "pfxB5ut-KTs",
+                        "itemId": 5,
+                        "name": "YALL",
+                        "played": false,
+                        "queueID": 5,
+                        "title": "evian baby&me"
+                    },
+
+                    "numItems": 3
                 }
                 return currentData;
             }
