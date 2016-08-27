@@ -63,6 +63,38 @@ function swap(upId, downId) {
 
 }
 
+function resetQueued(){
+    database.ref("itemsInQueue").set({
+        numItems: 0
+    }).then(function(){
+        window.location = "collaborator.html";
+    });
+}
+
+function resetPlayed(){
+        var queue = firebase.database().ref('itemsInQueue');
+    queue.transaction(function(currentData) {
+        // If users/ada/rank has never been set, currentRank will be `null`.
+        if (currentData === null) {
+            return currentData;
+        } else {
+            console.log(currentData);
+
+            var numObjects = Object.keys(currentData).length;
+            console.log(numObjects);
+            for(i = 1; i < numObjects; i++)
+            {
+                console.log(currentData[i]);
+                currentData[i].played = false;
+            }
+            return currentData;
+        }
+    },
+    function(){
+        window.location = "index.html";
+    });
+}
+
 //on value change, update queue array
 
 function logArray() {
