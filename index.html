@@ -118,8 +118,19 @@
                             <p>BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH </p>
                         </div>
                         <div class="col-sm-6">
-                            <p>BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH </p>
-                            <p>BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH </p>
+                            <h2>Technologies Used</h2>
+                            <ul>
+                              <li>Firebase - Queue Management</li>
+                              <li>Youtube API - Music Source</li>
+                              <li>iFrame API - Video Player Control</li>
+                              <li>Bootstrap - Front End Interface</li>
+                            </ul>
+                            
+                            <h2>Challenges</h2>
+                            <h4>Firebase - Queue</h4>
+                            <p>Issues arrose when dealing with how to handle multiple pushes to the database. How could we keep the integrity of the queue order if multiple people submitted at the same time</p>
+                            <p>Solution: We used transaction for everything and created our own autonumbering script to handle this issue. At no point do we use set or push, because the app required knowing the current amount of items in the system in order to add the new number. Transactions place everyone in a push queue which allows the app to pull the correct number of items in the database at the moment that the transaction is processed.</p>
+
                         </div>
                     </div>
                 </div>
