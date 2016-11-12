@@ -1,7 +1,12 @@
 # TBD - Music Video Player
 The Music Video player is a callaborative video player in which users may add new videos to a queu. The video queu can be managed by the session admin who will be able to reorder, add, or remove videos from the session queue. 
-## Installation
-TODO: Describe the installation process
+## Live Demo
+https://jarellano01.github.io/tbd-music-player/
+
+1. Click on Player Options in the menu and click on restart player for a starter playlist. 
+2. Click on Screens --> Admin or Collaborator to see the different screens available.
+3. Feel free to add new songs through the Collaborator Screen and modify the Queue through the Admin Screen.
+
 ## Usage
 ####Admin Role
 1. Session Admin will navigate to the website
