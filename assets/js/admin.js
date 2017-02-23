@@ -45,20 +45,20 @@ function generateTable(queueArray) {
     }
 
     $("#delete-song").click(function() {
-        var itemId = $(".active").attr("data-id");
+        var itemId = $("#queue .active").attr("data-id");
         videoPlayed(itemId);
     })
 
     $("#move-up").click(function(){
-        var upId = $(".active").attr("data-id");
-        var downId = $(".active").attr("data-prev");
+        var upId = $("#queue .active").attr("data-id");
+        var downId = $("#queue .active").attr("data-prev");
         if(downId !== undefined && upId !== undefined)
             swap(upId, downId);
     })
 
     $("#move-down").click(function(){
-        var downId = $(".active").attr("data-id");
-        var upId = $(".active").attr("data-next");
+        var downId = $("#queue .active").attr("data-id");
+        var upId = $("#queue .active").attr("data-next");
 
         if(downId !== undefined && upId !== undefined)
             swap(upId, downId);

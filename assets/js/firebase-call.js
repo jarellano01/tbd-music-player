@@ -17,15 +17,19 @@ var qId = 0;
 function addVideoToDatabase(youtubeId, name, dedication, title) {
     var queue = firebase.database().ref('itemsInQueue');
     queue.transaction(function(currentData) {
-        // If users/ada/rank has never been set, currentRank will be `null`.
-        if (currentData === null) {
-            return currentData;
-        } else {
-            var numObjects = Object.keys(currentData).length;
+            
+            var numObjects = 0;
+            if(currentData === null){
+                numObjects = 1;
+                currentData = {};
+            }
+            else{
+                numObjects = Object.keys(currentData).length;
+            }
             currentData[numObjects] = { "itemId": numObjects, "queueID": numObjects, "name": name, "title": title, "id": youtubeId, "dedication": dedication, played: false };
             currentData.numItems = numObjects;
             return currentData;
-        }
+        
     });
 
 }

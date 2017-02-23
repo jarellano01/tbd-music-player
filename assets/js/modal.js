@@ -1,4 +1,5 @@
-$("#submit-song").on('click', function() {
+$("#submit-song").on('click', function(e) {
+    e.preventDefault();
     var name = $('#nameinput').val().trim();
     var dedication = $('#dedicateinput').val().trim();
     var title= $("#youTitle").val();
