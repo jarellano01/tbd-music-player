@@ -1,5 +1,5 @@
 # TBD - Music Video Player
-The Music Video player is a callaborative video player in which users may add new videos to a queu. The video queu can be managed by the session admin who will be able to reorder, add, or remove videos from the session queue. 
+The Music Video player is a callaborative video player in which users may add new videos to a queue. The video queue can be managed by the session admin who will be able to reorder, add, or remove videos from the session queue. 
 ## Live Demo
 https://jarellano01.github.io/tbd-music-player/
 
@@ -11,9 +11,9 @@ https://jarellano01.github.io/tbd-music-player/
 ####Admin Role
 1. Session Admin will navigate to the website
 2. Session Admin will create a new session which will have a session ID
-3. Session ID is to be shared with any members who will be allowed to add to the queu
+3. Session ID is to be shared with any members who will be allowed to add to the queue
 
-The Session Admin will be in charge of music flow and will have the ability to change the order of the queu or remove a song completely. 
+The Session Admin will be in charge of music flow and will have the ability to change the order of the queue or remove a song completely. 
 
 
 ####Presentation Screen
@@ -24,13 +24,13 @@ Presentation screen is the computer that will be hooked up to a monitor, tv or e
 
 
 ####Session Members
-A session member is anyone enjoying the music who is given access to add music videos to the queu
+A session member is anyone enjoying the music who is given access to add music videos to the queue
 
 Session Admin will provide members with a session login code.
 
 1. Session Member will navigate to the website and login as a session member with the given session login code
 2. Videos can now be searched for and chosen through the Member Interface
-3. Select a song, fill out the required information, and press submit to add to the queu
+3. Select a song, fill out the required information, and press submit to add to the queue
 
 
 ## Contributing
